@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Song App</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"> <!--css link for using datatables-->
+    <link rel="stylesheet" href="song.css">
+</head>
+
+<body>
+    
+	<div class="wrapper" >
+   <form name="login" class="welcome-screen">
+            <h1 style="color:pink; font-size: 40px"> Welcome to Songify </h1>
+            <h3 style="color:#ecd504; font-size: 22px"> Enter Name and Password to access your account </h3>
+            <div>   <!-- by using div it makes inline -->
+            <label style="color:white; font-size:28px; padding:15px">Email Address</label>
+            <input type="text" placeholder="enter test@acadview.com" class="email" name="userid"/> 
+            </div>
+            <div>
+           <br> <label style="color:white; color:white; font-size:28px; padding:45px">Password</label>
+            <input type="password" placeholder="enter javascriptrocks" class="pswrd" name="pswrd"/>
+            </div>
+           <br> <input type="button" onclick="check(this.form)" class="submit" value="Login"/>
+            
+    </form> 
+       <!-- <form name="loginform" class="welcome-screen"> -->
+	   <!-- <section class="welcome-screen"> -->
+            
+           <!--  <div class="input-wrapper">
+                <div class="email">
+                  <label style="color:blue; font-size:30px; padding:5px">Email Address </label>
+                  <input type="text" name="email" placeholder="Enter Test@acadview" required="Test@acadview.com" id="name-input" style="font-size: 18px; height:30px"> <br> <br>
+                </div>
+                <div>
+                  <label style="color:blue; font-size:30px; padding:35px">Password  </label>
+                  <input type="text" name="password" placeholder="Enter Javascriptrocks" id="name-input" required="" style="font-size: 18px; height:30px"> <br> <br>
+                </div>
+                <input type="button" onclick="check(this.form)" class="Submit" value="Login"/>
+
+            </div> -->
+       <!--  </section> -->
+       </form>
+
+		<div class="main hidden">
+            <header>
+                <div class="right floated user-name"> </div>
+            </header>
+            <section class="content">
+                <audio  src="song1.mp3"></audio>
+
+                 <!--div id="songs"-->  <!--formats of datatables . by using this we see something at top-->
+                     <!--div class="list-headers">
+                       ...
+                    </div>
+                    <div class="song-list">
+                        ...
+                     </div>
+                        ....
+                </div-->     <!--change in table form-->
+               <table id="songs">
+   				<thead class="list-headers">
+           			<tr>
+           			 	<td> Title </td>
+            				<td> Artist </td>
+           			     <td> Album </td>
+            				<td> Duration </td>
+      				</tr>
+      			</thead>
+        <!-- <div class="song-list"> -->
+           		<tbody>
+           		 	<tr class="song" id="song1">
+                			<td class="song-name"></td>
+                			<td class="song-artist"></td>
+                			<td class="song-album"></td>
+              			     <td class="song-length"></td>
+           		     </tr>
+           		     <tr class="song" id="song2">
+                			<td class="song-name"></td>
+               		     <td class="song-artist"></td>
+                              <td class="song-album"></td>
+                              <td class="song-length"></td>
+           		     </tr>
+            			<tr class="song" id="song3">
+              				<td class="song-name"></td>
+                              <td class="song-artist"></td>
+                              <td class="song-album"></td>
+                              <td class="song-length"></td>
+                         </tr>
+                         <tr class="song" id="song4">
+                              <td class="song-name"></td>
+               			<td class="song-artist"></td>
+               			<td class="song-album"></td>
+               			<td class="song-length"></td>
+            			</tr>
+        <!-- </div> -->
+    				</tbody>
+    			</table>    <!--after conerting in table it get totally changed and become white bcoz datatables want some their css so we just override >
+        
+
+
+				<!--div class="list-headers">
+					<div> Title </div> 
+					<div> Artist </div>
+					<div> Album </div>
+					<div> Duration </div>
+				</div>
+				<div class="song-list">
+					<div class="song" id="song1">      
+						<span class="song-name"></span>  
+						<span class="song-artist"></span>
+						<span class="song-album"></span>
+						<span class="song-length"></span>     
+					</div>
+					<div class="song" id="song2">
+						<span class="song-name"></span>
+						<span class="song-artist"></span>
+						<span class="song-album"></span>
+						<span class="song-length"></span>
+					</div>
+					<div class="song" id="song3">
+						<span class="song-name"></span>
+						<span class="song-artist"></span>
+						<span class="song-album"></span>
+						<span class="song-length"></span>
+					</div>
+					<div class="song" id="song4">
+						<span class="song-name"></span>
+						<span class="song-artist"></span>
+						<span class="song-album"></span>
+						<span class="song-length"></span>
+					</div>
+							<!--span class="song-name"></span>
+							<span class="song-artist"></span>
+							<span class="song-album"></span>
+							<span class="song-length"></span-->
+				
+				<div class="current-song-wrapper">
+       				 <img src="img/Badrinath-Ki-Dulhania.jpg" class="current-song-image"> 
+      		    	<div>
+       				 	<p class="current-song-name">Tamma Tamma Again</p>
+       				    <p class="current-song-album">Badrinath ki Dulhania</p>
+       				</div>
+       			</div>
+            </section>
+            <footer>
+                <div class="controls">
+                    <div class="player-buttons">
+                          <i class="fa fa-random clickable disabled" aria-hidden="true"></i>
+                          <i class="fa fa-step-backward clickable" aria-hidden="true"></i>
+                          <i class="fa fa-play clickable play-icon" aria-hidden="true"></i>
+                          <i class="fa fa-step-forward clickable" aria-hidden="true"></i>
+                          <i class="fa fa-repeat disabled clickable" aria-hidden="true"></i>
+                          <i class="fa fa-volume-up" aria-hidden="true" style="font-size:24px"></i>
+                          <i class="fa fa-volume-off" aria-hidden="true" style="font-size:24px"></i>
+                    </div>
+                    <div class="progress-wrapper">
+						          <span class="time-elapsed"> </span>
+						    	      <div class="player-progress">
+								        <div class="progress-filled"> </div>
+							          </div>
+                        <span class="song-duration"></span>
+
+
+                          <form action="drum kit/drumkit.html" id="button1">   <!-- here we link drum html file -->
+                          <input type="submit" value="DRUM KIT">
+                          </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="jquery.js">
+    </script>
+	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"> //link for adding js file for datatables
+    </script>
+    <script src="song.js">      //put all jquery  in diff file ie main.css and for separation of this javascript from index file we called "SEPARATION OF CONCERNS" 
+    </script>
+</body>
+
+</html>

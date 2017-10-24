@@ -1,0 +1,60 @@
+<html>
+<head>
+</head>
+<style>
+body{             /*aboslute and relative property help in shifting the word click me on top of the button*/
+	position:relative; 
+text-align: left;
+margin-left: 50px;
+margin-top: 120px;
+font-size: 38px;
+color:white;
+font-family: "Lucida Handwriting";
+}
+h2{
+	position:absolute;
+	text-align: right;
+	right:200px;
+top:60px;
+font-size: 38px;
+color:white;
+font-family: "Lucida Handwriting";
+color:pink;
+}
+.music{
+background-repeat: no-repeat;
+background-size:cover;
+
+}
+input{
+	border-radius:14px;
+	font-size:24px;
+	background-color: blue;
+	color:white;
+	height:60px;
+	width:250px;
+
+}
+#button1{
+	position:fixed;
+	right:100px;
+	top:400px;
+}
+#button2{
+	position:fixed;
+	top:300px;
+	right:200px;
+}
+</style>
+<body background="music.jpg" class="music">
+	<h1>WELCOME<br> IN <br>MUSIC <br>WORLD</h1>
+	<h2> CLICK ME !!</h2>
+	
+	<form action="drum.html" id="button1">
+	<input type="submit" value="DRUM KIT">
+	</form>
+	<form action="song.html" id="button2">
+	<input type="submit" value="SONGIFY">
+	</form>
+</body>
+</html>
